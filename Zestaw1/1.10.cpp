@@ -1,7 +1,5 @@
 
 #include<iostream>
-#include<iomanip>
-#include<cmath>
 using namespace std;
 
 void wielokrotnosci(int *tab,int n){
@@ -14,7 +12,7 @@ int main()
 {
     int tab[100];
     int x;
-    cout<<"podej liczbe ktora ma sprawdzac"<<endl;
+    cout<<"Podaj liczbe"<<endl;
     cin>>x;
     cout<<"###################"<<endl;
     for(int i = 0; i<= 100 ; i++) tab[i]=1;

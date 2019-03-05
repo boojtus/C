@@ -1,11 +1,14 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main()
 {
-    int mini =100,maxi=1000,parz=0,nparz=0;
+    int mini,maxi=0,parz=0,nparz=0;
+    srand((unsigned)time(0));
     for(int i=0; i<100;i++){
-        int a=rand();
+        int a=rand() % 1000;
         if(a%2==0){
             parz+=a;
         }
