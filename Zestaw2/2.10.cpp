@@ -1,10 +1,10 @@
 #include <iostream>
 #include<string>
 #include <ctime>
-#define N 9 //ilosc wierszy
-#define M 10 // ilosc kolumn
+#define N 7 //ilosc wierszy
+#define M 7 // ilosc kolumn
 using namespace std;
-int n;
+int n=6,m=6;
 int tab[N][M]; //[wiersze]{KOLUMNY]
 
 void elemincalej()
@@ -38,31 +38,57 @@ void eleminwiersza()
 
 int eleminkolumn()
 {
+    cout<<N<<" "<<M<<endl;
     for(int a =0;a<M;a++)
     {
         int najm = tab[0][a];
-        cout<<najm<<endl;
+        //cout<<najm<<endl;
         for(int b=0;b<N;b++)
         {
-            if(tab[a][b]<najm){najm=tab[b][a];}
+            if(tab[b][a]<najm){najm=tab[b][a];}
         }
         cout<<"Najmniejszym elementem w kolumnie "<<a<<" jest "<<najm<<endl;
     }
-
 
 }
 
 void elminprze()
 {
-    for(int a =0;a<M;a++)
+    if(N==M)
     {
-            tab[a][a]=-9;
-
+        int najm = tab[0][0];
+        for(int a =0;a<M;a++)
+        {
+            if(tab[a][a]<najm){najm=tab[a][a];}
+        }
+        cout<<"Najmniejszym elementem w glownej przekatnej jest "<<najm<<endl;
     }
+    else cout<<"nico"<<endl;
+}
+
+void pomniejsz(int n,int m)
+{
+    #undef N
+    #undef M
+    #define N n
+    #define M m
+    cout<<"tablica zmienszona do "<<N<<"x"<<M<<endl;
 }
 
 int main()
 {
+
+    while(n<N)
+    {
+        cout<<"Podaj do jakiej wartosci chcesz ilosc wierszy"<<endl;
+        cin>>n;
+    }
+    while(m>M)
+    {
+        cout<<"Podaj do jakiej wartosci chcesz ilosc wierszy"<<endl;
+        cin>>m;
+    }
+
     srand((unsigned)time(0));
     for(int a =0;a<N;a++)
     {
@@ -79,13 +105,17 @@ int main()
         }
         cout<<endl;
     }
-    //elemincalej();
+    cout<<"-------------------------------"<<endl;
+    elemincalej();
     cout<<"--------------------------------"<<endl;
-    //eleminwiersza();
+    eleminwiersza();
     cout<<"--------------------------------"<<endl;
-    //eleminkolumn();
-   //cout<<N<<" "<<M;
-   elminprze();
+    eleminkolumn();
+    cout<<"--------------------------------"<<endl;
+    elminprze();
+    cout<<"--------------------------------"<<endl;
+    pomniejsz(n,m);
+    cout<<"POMNIEJSZONA"<<endl;
     for(int a =0;a<N;a++)
     {
         for(int b=0;b<M;b++)
@@ -94,5 +124,15 @@ int main()
         }
         cout<<endl;
     }
+    cout<<"-------------------------------"<<endl;
+    elemincalej();
+    cout<<"--------------------------------"<<endl;
+    eleminwiersza();
+    cout<<"--------------------------------"<<endl;
+    eleminkolumn();
+    cout<<"--------------------------------"<<endl;
+    elminprze();
+    cout<<"--------------------------------"<<endl;
     return 0;
 }
+
