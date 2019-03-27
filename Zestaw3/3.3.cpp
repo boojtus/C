@@ -3,34 +3,29 @@
 
 using namespace std;
 
-int sprawdz(string l_1, string l_2)
+void szukajFrazy( string  tekst, string szukanaFraza )
 {
-    slowo = l_1.find(l_2);
-
-    if (slowo != string::npos)
+    size_t znalezionaPozycja = tekst.find( szukanaFraza );
+    if( znalezionaPozycja == string::npos )
     {
-        cout << slowo ;
+        cout << -1 <<endl;
     }
-    else
-    {
-        cout << -1;
-    }
+    else{cout<<znalezionaPozycja<<endl;}
 
-    return 0;
+
 }
 
 int main()
 {
-    string l_1;
-    string l_2;
+    string tekst,szukana;
 
     cout << "Podaj lancuch 1: ";
-    getline(cin, l_1);
+    getline(cin, tekst);
 
-    cout << "Podaj lancuch 2: ";
-    getline(cin, l_2);
+    cout << "Podaj szukany ";
+    getline(cin, szukana);
 
-    sprawdz(l_1, l_2);
+    szukajFrazy(tekst, szukana);
 
     return 0;
 }
