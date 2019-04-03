@@ -55,7 +55,7 @@ void elebezpowt()
 
     v.resize(it-v.begin());
 
-    cout << "Elementy ktore wystepuja tylko w tablicy 1(a) "<<endl;
+    cout << "Elementy ktore wystepuja w obu tablicach bez powtorzen "<<endl;
     for (it=v.begin(); it!=v.end(); ++it)
         cout << ' ' << *it;
     cout << '\n';
